@@ -1,4 +1,4 @@
 solutionPublisher
 =================
 
-Auto-Publish Solutions through node
+Auto-Publish Solutions
