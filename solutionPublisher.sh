@@ -31,8 +31,26 @@ read  finished_variable
 if [ finished_variable = "y" ]; then
   echo "Pushing the solution branch to GitHub"
   cd tempStoreOfRepoJunior
+  git add .
+  
+  if [ "$#" = 0 ]; then
+    git commit -m "Solution Added"
+  fi
+
+  if [ "$#" = 1 ]; then  
+    git commit -m"Solution $1 Added"
+  fi
+
   git push origin solution
   cd ../tempStoreOfRepoSenior
+  git add .
+  if [ "$#" = 0 ]; then
+    git commit -m "Solution Added"
+  fi
+
+  if [ "$#" = 1 ]; then  
+    git commit -m"Solution $1 Added"
+  fi
   git push origin solution
   cd ..
 
@@ -43,3 +61,4 @@ fi
 echo "Removing the temporary repository directory"
 rm -rf ./tempStoreOfRepoSenior/
 rm -rf ./tempStoreOfRepoJunior/
+[]
