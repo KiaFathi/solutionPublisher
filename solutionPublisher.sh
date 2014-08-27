@@ -2,7 +2,6 @@
 echo "$1"
 echo "Welcome to the Solution Publisher"
 
-mkdir tempStoreOfRepo
 git clone https://github.com/hackreactor/2014-07-toy-problems.git tempStoreOfRepoJunior/
 git clone https://github.com/hackreactor/2014-06-toy-problems.git tempStoreOfRepoSenior/
 
@@ -27,8 +26,8 @@ cd ..
 echo "Add your solution code..."
 echo "Are you ready to push the solution? (y/n)"
 read  finished_variable
-
-if [ finished_variable = "y" ]; then
+echo "$finished_variable"
+if [ "$finished_variable" = "y" ]; then
   echo "Pushing the solution branch to GitHub"
   cd tempStoreOfRepoJunior
   git add .
@@ -61,4 +60,3 @@ fi
 echo "Removing the temporary repository directory"
 rm -rf ./tempStoreOfRepoSenior/
 rm -rf ./tempStoreOfRepoJunior/
-[]
