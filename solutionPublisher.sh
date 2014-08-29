@@ -18,15 +18,16 @@ fi
 
 cd tempStoreOfRepoJunior
 git checkout solution
+git pull origin master
 cd ../tempStoreOfRepoSenior
 git checkout solution
+git pull origin master
 cd ..
 
  
 echo "Add your solution code..."
 echo "Are you ready to push the solution? (y/n)"
 read  finished_variable
-echo "$finished_variable"
 if [ "$finished_variable" = "y" ]; then
   echo "Pushing the solution branch to GitHub"
   cd tempStoreOfRepoJunior
